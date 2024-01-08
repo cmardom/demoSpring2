@@ -85,16 +85,16 @@ public class SpringBootWebMvcJdbcVentasApplication implements CommandLineRunner{
 
 		comercialDAO.getAll().forEach( c -> log.info("Comercial: {}", c));
 
-		id = 1;
-		Optional<Comercial> comercial = comercialDAO.find(id);
+		int id2 = 1;
+		Optional<Comercial> comercial = comercialDAO.find(id2);
 
 		if (comercial.isPresent()){
-			log.info("Comercial {}: {}", id, comercial.get());
+			log.info("Comercial {}: {}", id2, comercial.get());
 			String nombreOLD = comercial.get().getNombre();
 			comercial.get().setNombre("Carmen");
 			comercialDAO.update(comercial.get());
-			comercial = comercialDAO.find(id);
-			log.info("Comercial{}: {}", id, comercial.get());
+			comercial = comercialDAO.find(id2);
+			log.info("Comercial{}: {}", id2, comercial.get());
 
 			comercial.get().setNombre(nombreOLD);
 			comercialDAO.update(comercial.get());

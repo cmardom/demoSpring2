@@ -32,7 +32,7 @@ public class ComercialDAOImpl implements ComercialDAO {
 
 		String sqlInsert = """
  						INSERT INTO comercial (nombre, apellido1, apellido2, comisión)
- 						VALUES (?, ?, ?, ?, ?)
+ 						VALUES (?, ?, ?, ?)
  						""";
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 
